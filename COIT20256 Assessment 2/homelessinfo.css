@@ -1,0 +1,22 @@
+ /* 
+ *@author gwen cabangon 12119839
+ * @author mia megan gail macasero 12127091
+ * @lecturer: ishan senarathna
+ * compiler java SE 11
+ * JavaFX 11
+ * This file provides the standard driver class for GUI based applications.
+ * This file is referenced from ModelGUI sample code and Assessment 1 solution
+ * in COIT20256 Moodle by Mary Tom.
+ */
+
+.mainFxmlClass {
+    
+    #codeLabel #nameLabel #locationNameDisplay{
+        -fx-font-weight: none;
+        -fx-font-style: italic;
+    }
+    
+    .button:hover {
+        -fx-background-color: linear-gradient(#2A5058, #61a2b1);
+    }
+}

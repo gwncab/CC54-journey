@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<TabPane id="TabPane" fx:id="hisTabPane" prefHeight="553.0" prefWidth="656.0" styleClass="root" stylesheets="homeslessinfo.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="HomelessInfoController">
+   <tabs>
+        <Tab fx:id="addLocationTab" text="Location">
+            <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="600.0" style="-fx-background-color: #ebfaeb;">
+                    <children>
+                        <Label fx:id="sa3CodeLabel" layoutX="23.0" layoutY="98.0" text="Enter SA3code:">
+                            <font>
+                                <Font size="13.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="sa3CodeField" layoutX="167.0" layoutY="95.0" prefHeight="25.0" prefWidth="87.0" />
+                        <Label fx:id="locationNameLabel" layoutX="23.0" layoutY="152.0" text="Enter Location Name:">
+                            <font>
+                                <Font size="13.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="locationNameField" layoutX="166.0" layoutY="149.0" prefHeight="25.0" prefWidth="173.0" />
+                        <Button fx:id="btnLocation" layoutX="167.0" layoutY="224.0" mnemonicParsing="false" onAction="#btnLocationButtonClicked" style="-fx-background-color: gray;" text="Add Location" textFill="WHITE" />
+                  <Label fx:id="locationMessage" layoutX="23.0" layoutY="34.0" text="To add Location, enter SA3Code and Location Name, and click Add Location.">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="btnLocNext" layoutX="445.0" layoutY="398.0" mnemonicParsing="false" onAction="#btnLocNextButtonClicked" prefHeight="25.0" prefWidth="67.0" style="-fx-background-color: gray;" text="Next" textFill="#f7eeee" />
+                  <Label fx:id="sa3CodeInvalidErr" layoutX="350.0" layoutY="92.0" prefHeight="31.0" prefWidth="129.0" textFill="#fc420a" />
+                  <Label fx:id="locNameInvalidErr" layoutX="350.0" layoutY="143.0" prefHeight="29.0" prefWidth="196.0" textFill="#fc420a" />
+                  <Label fx:id="addLocSuccess" layoutX="163.0" layoutY="182.0" prefHeight="29.0" prefWidth="196.0" textFill="#18ab2e" />
+                  <Button fx:id="btnLocationSaveToDb" layoutX="165.0" layoutY="304.0" mnemonicParsing="false" onAction="#btnLocationSaveToDbButtonClicked" style="-fx-background-color: gray;" text="Save to DB" textFill="WHITE" />
+                  <Label fx:id="locationNameLabel1" layoutX="164.0" layoutY="270.0" text="Click Save to DB button to add locations to the database.">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="locationNameLabel11" layoutX="276.0" layoutY="401.0" text="Clck Next to add Tenants.">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="saveLocToDbLabel" layoutX="251.0" layoutY="307.0" prefHeight="19.0" prefWidth="191.0" textFill="#18ab2e">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="nameLabel" layoutX="23.0" layoutY="172.0" text="(Starts with Capital letter,&#10;  contains alpahbets only,&#10;  space, and - )">
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="codeLabel" layoutX="22.0" layoutY="111.0" prefHeight="24.0" prefWidth="101.0" text="(5-digit code )">
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                  </Label>
+                    </children>
+                </AnchorPane>
+            </content>
+        </Tab>
+        <Tab fx:id="addTenantTab" text="Tenant">
+            <content>
+                <AnchorPane fx:id="tenantPane" minHeight="0.0" minWidth="0.0" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #ebfaeb;">
+                    <children>
+                        <Label layoutX="42.0" layoutY="65.0" text="Enter age:">
+                     <font>
+                        <Font size="13.0" />
+                     </font></Label>
+                  <Label layoutX="71.0" layoutY="195.0" text="Income source:">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="277.0" layoutY="65.0" text="Gender:">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="63.0" layoutY="283.0" text="Choose SA3Code:">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="sa3CodeSelect" layoutX="192.0" layoutY="280.0" onAction="#sa3CodeSelectSelected" prefWidth="150.0" />
+                  <Label fx:id="locationNameDisplay" layoutX="352.0" layoutY="270.0" prefHeight="45.0" prefWidth="268.0" text="Location Name" textFill="#393838">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <ChoiceBox fx:id="genderSelect" layoutX="352.0" layoutY="62.0" prefHeight="25.0" prefWidth="123.0" />
+                  <ChoiceBox fx:id="ageSelect" layoutX="130.0" layoutY="62.0" prefHeight="25.0" prefWidth="62.0" />
+                  <Label layoutX="79.0" layoutY="146.0" text="Enter income:">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="incomeSelect" layoutX="192.0" layoutY="143.0" prefWidth="150.0" />
+                  <ChoiceBox fx:id="incomeSourceSelect" layoutX="192.0" layoutY="192.0" prefWidth="150.0" />
+                  <Label fx:id="locationMessage1" layoutX="14.0" layoutY="14.0" text="Provide tenant details.">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="locationMessage11" layoutX="25.0" layoutY="110.0" text="Income details">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="locationMessage111" layoutX="22.0" layoutY="243.0" text="Location details">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="btnTenantAdd" layoutX="72.0" layoutY="360.0" mnemonicParsing="false" onAction="#btnTenantAddButtonClicked" prefHeight="25.0" prefWidth="83.0" style="-fx-background-color: gray;" text="Add Tenant" textFill="#f7f6f6" />
+                  <Button fx:id="btnTenantNext" layoutX="441.0" layoutY="425.0" mnemonicParsing="false" onAction="#btnTenantNextButtonclicked" prefHeight="25.0" prefWidth="67.0" style="-fx-background-color: gray;" text="Next" textFill="#f7f6f6" />
+                  <Label fx:id="locationNameLabel12" layoutX="70.0" layoutY="398.0" text="Click Save to DB button to add locations to the database.">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="btnTenantSaveToDb" layoutX="73.0" layoutY="425.0" mnemonicParsing="false" onAction="#btnTenantSaveToDbButtonClicked" prefHeight="25.0" prefWidth="80.0" style="-fx-background-color: gray;" text="Save to DB" textFill="WHITE" />
+                  <Label fx:id="saveTenantToDbLabel" layoutX="171.0" layoutY="428.0" prefHeight="19.0" prefWidth="191.0" textFill="#18ab2e">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="addTenantLabel" layoutX="171.0" layoutY="363.0" prefHeight="19.0" prefWidth="191.0" textFill="#18ab2e">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                        
+                        
+                    </children>
+               <padding>
+                  <Insets left="10.0" top="15.0" />
+               </padding>
+                </AnchorPane>
+            </content>
+      </Tab>
+      <Tab fx:id="startTab" text="Report">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="497.0" prefWidth="600.0" style="-fx-background-color: #ebfaeb;">
+               <children>
+                  <Button fx:id="btnDisplay" layoutX="516.0" layoutY="130.0" mnemonicParsing="false" onAction="#btnDisplayButtonClicked" style="-fx-background-color: gray;" text="Display" textFill="WHITE" />
+                  <ComboBox fx:id="reportTypeSelect" layoutX="145.0" layoutY="85.0" onAction="#reportTypeSelectSelected" prefWidth="150.0" />
+                  <ComboBox fx:id="sa3CodeReportSelect" layoutX="145.0" layoutY="130.0" onAction="#sa3CodeReportSelectSelected" prefWidth="150.0" />
+                  <TextArea fx:id="reportArea" layoutX="38.0" layoutY="184.0" prefHeight="273.0" prefWidth="584.0" />
+                  <Label layoutX="26.0" layoutY="27.0" text="Display risky persons statistic by choosing report type, and clicking Display.">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="42.0" layoutY="88.0" text="Report type:">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="42.0" layoutY="133.0" text="SA3Code:">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="codeErr" layoutX="310.0" layoutY="128.0" prefHeight="29.0" prefWidth="196.0" textFill="#fc420a" />
+                  <Button fx:id="btnExit" layoutX="516.0" layoutY="469.0" mnemonicParsing="false" onAction="#btnExitButtonClicked" prefHeight="25.0" prefWidth="49.0" style="-fx-background-color: gray;" text="Exit" textFill="WHITE" />
+               </children>
+            </AnchorPane>
+        </content>
+      </Tab>
+   </tabs>
+</TabPane>
